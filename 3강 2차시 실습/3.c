@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 void lotto();
-int increase_seed_num = 1;
 
 int main()
 {
@@ -29,5 +28,5 @@ void lotto()
 	int rand5 = rand() % 45 + 1;
 	int rand6 = rand() % 45 + 1;
 	printf("%d : %d %d %d %d %d %d\n",seed,rand1,rand2,rand3,rand4,rand5,rand6);
-	seed += increase_seed_num;
+	seed ++;
 }
