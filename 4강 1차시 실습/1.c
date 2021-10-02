@@ -1,4 +1,5 @@
 #include <stdio.h>
+<<<<<<< Updated upstream
 #include <stdlib.h>
 
 void swap(int *x,int *y);
@@ -23,14 +24,6 @@ int main(void)
 	printf("\nresult: %d %d %d\n",a,b,c);
 }
 
-void swap(int *x,int *y)
-{
-	int temp;
-	temp = *x;
-	*x = *y;
-	*y = temp;
-}
-
 void compare(int *x,int *y)
 {
 	if(*x > *y)
@@ -42,3 +35,4 @@ void compare(int *x,int *y)
 		return;
 	}
 }
+

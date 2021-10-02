@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #include<stdio.h>
 
 int main(void)
@@ -25,4 +26,3 @@ int main(void)
 
 	printf("a %c b = %.f\n", operation, result);
 }
-
