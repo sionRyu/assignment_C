@@ -7,7 +7,7 @@ int b, c, d;
 
 void Reservation(int h, int v, int ar[][10]);
 void Cancel(int h, int v, int ar[][10]);
-void Now();
+void Now(int ar[][10]);
 void Exit();
 
 int main(void)
@@ -23,7 +23,7 @@ int main(void)
 		}
 		else if (b == 3)
 		{
-			Now();
+			Now(a);
 			continue;
 		}
 
@@ -79,24 +79,25 @@ int main(void)
 
 void Reservation(int h, int v, int ar[][10])
 {
-	if (ar[h][v] == 1)
+	if (h == 9 && v == 9 && (ar[h - 1][v - 1] == 1 || ar[h - 1][v] == 1 || ar[h][v - 1] == 1))
 	{
-		printf("해당 좌석은 이미 예약되었습니다");
+		printf("해당 좌석은 사회적 거리두기로 인해 예매할 수 없습니다.\n");
 	}
-	else if (ar[h - 1][v] == 1 || ar[h + 1][v] == 1 || ar[h][v - 1] == 1 || ar[h][v + 1] == 1 && !(h == 9 && v == 9))
+	else if (h != 9 || v != 9)
 	{
-		printf("해당 좌석은 사회적 거리두기로 인해 예매할 수 없습니다.");
-	}
-	else if (h == 9 && v == 9)
-	{
-		if (ar[h - 1][v] == 1 || ar[h][v - 1] == 1)
+		for (int n = -1; n < 2; n++)
 		{
-			printf("해당 좌석은 사회적 거리두기로 인해 예매할 수 없습니다.");
-		}
-		else
-		{
-			ar[h][v] = 1;
-			printf("예매되었습니다");
+			if (ar[h + n][v - 1] == 1 || ar[h + n][v] == 1 || ar[h + n][v + 1] == 1)
+			{
+				printf("해당 좌석은 사회적 거리두기로 인해 예매할 수 없습니다.\n");
+				break;
+			}
+			else if (n == 1 && ar[h + 1][v + 1] == 0 && ar[h + 1][v] == 0 && ar[h + 1][v - 1] == 0)
+			{
+				ar[h][v] = 1;
+				printf("예매되었습니다");
+				break;
+			}
 		}
 	}
 	else
@@ -113,7 +114,7 @@ void Cancel(int h, int v, int ar[][10])
 	printf("\n");
 }
 
-void Now()
+void Now(int ar[][10])
 {
 	printf("\n==============================================\n    ");
 	for (int i = 1; i < 11; i++)
