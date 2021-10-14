@@ -24,6 +24,9 @@ int main(void)
 			RandomGeneration(a, b);
 			continue;
 		case 2:
+			Multiplication(a,b,d);
+			continue;
+		case 3:
 			Exit(a);
 			break;
 		}
