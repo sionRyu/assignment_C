@@ -1,0 +1,3 @@
+int printf(const char * format, ...);
+int putc(int ch,FILE *fp);
+int putchar(int ch);
