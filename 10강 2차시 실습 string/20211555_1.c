@@ -23,7 +23,8 @@ int main(void)
 			{
 				return printf("NO\n");
 			}
-		printf("YES\n");
+			printf("YES\n");
+		}
 	}
 	else
 	{

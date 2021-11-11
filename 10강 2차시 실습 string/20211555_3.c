@@ -4,7 +4,7 @@ int main(void)
 {
 	char str[41];
 	char* sPtr;
-	int sumC = 0, sumc = 0, sumO = 0 ,cnt = 0;
+	int sumC = 0, sumc = 0, sumO = 0, cnt = 0;
 
 	sPtr = str;
 	FILE* file = fopen("input.txt", "r");
@@ -12,7 +12,7 @@ int main(void)
 
 	while (fgets(sPtr, sizeof(str), file) != NULL)
 	{
-		fputs(sPtr,stdout);
+		fputs(sPtr, stdout);
 
 		while (*(sPtr + cnt) != '\n')
 		{
@@ -20,7 +20,7 @@ int main(void)
 			{
 				sumC++;
 			}
-			else if ('a' <= *(sPtr + cnt) && *(sPtr+cnt) <= 'z')
+			else if ('a' <= *(sPtr + cnt) && *(sPtr + cnt) <= 'z')
 			{
 				sumc++;
 			}
@@ -30,7 +30,7 @@ int main(void)
 			}
 			cnt++;
 		}
-
+		cnt = 0;
 		printf("small: %d Big: %d Other: %d\n\n", sumc, sumC, sumO);
 		sumc = 0, sumC = 0, sumO = 0;
 	}
