@@ -13,7 +13,7 @@ int main(void)
 	{
 		for (int i = 0; i < n; i++)
 		{
-			*(*(arr_a + i) + j) = j * 5 + i + 1;
+			*(*(arr_a + i) + j) = j * n + i + 1;
 			printf("%-3d", *(*(arr_a + i) + j));
 		}
 		printf("\n");
