@@ -14,14 +14,19 @@ void printMatrix(double** A, int n);
 int main(void)
 {
 	FILE* file = fopen("matrix.txt", "rw");
+
+	int arr[5][5] = { 0 };
+	int c_size
+
+
+
 	for (int i = 0; i < 5; i++)
 	{
 		for (int j = 0; j < 5; j++)
 		{
-
+			arr[i][j] = fgetc(file);
 		}
 	}
-	int arr[5][5] = { 0 };
 
 	for (int i = 0; i < 5; i++)
 	{
