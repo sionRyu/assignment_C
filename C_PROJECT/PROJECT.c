@@ -14,10 +14,13 @@ void printMatrix(double** A, int n);
 int main(void)
 {
 	FILE* file = fopen("matrix.txt", "rw");
+	int c_size = 0;
 
-	int arr[5][5] = { 0 };
-	int c_size
+	c_size = fscanf(file, "%d");
+	int* arr[6];
+	int arr[6] = malloc(sizeof(int) * c_size);
 
+	int* arr[5];
 
 
 	for (int i = 0; i < 5; i++)
