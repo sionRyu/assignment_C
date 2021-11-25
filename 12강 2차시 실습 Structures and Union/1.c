@@ -111,13 +111,16 @@ int calculate_fee(park p[], int n)
 			days += 365 * (p[n].outdate[0] - p[n].indate[0] - 1);
 		}
 
-		for (int i = p[n].indate[1] + 1; i < p[n].outdate[1]; i++)
+		for (int i = p[n].outdate[1] ; i < p[n].indate[1]+1; i++)
 		{
-			days += months[i];
+			days -= months[i];
 		}
+
+		days += 365 + p[n].indate[2]+p[n].outdate[2];
 	}
 
+	if (//시간 비교하고 days -1 0 +1 숫자는 잘 모르겠음 해주고 days *30000 + mins/10 * 1000원 + mins%10>0 이면 + 1000 원 계산해주기)
+	{
 
-
-
+	}
 }
