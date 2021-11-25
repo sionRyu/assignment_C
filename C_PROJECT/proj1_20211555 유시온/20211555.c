@@ -1,18 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include "20211555.h"
 
-double detA(double** A, int n);
-double** cofacotrMatrix(double** A, int n);
-double** transposeMatrix(double** A, int n);
-double** inverseMatrix(double** A, double det, int n);
-double** inverseCheckMatrix(double** A, double** B, int n);
-void printMatrix(double** A, int n);
+int main(){
 
-
-
-
-int main(void)
-{
 	FILE* file = fopen("matrix.txt", "rw");
 	int c_size = 0;
 
@@ -39,4 +28,7 @@ int main(void)
 		}
 		printf("\n");
 	}
+	
+
+	return 0;
 }
