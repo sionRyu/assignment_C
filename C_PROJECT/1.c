@@ -11,49 +11,21 @@ int main() {
 		return 0;
 	}
 
-	int** arr;
-	arr = (int**)malloc(sizeof(int*) * n);
+	double** arr;
+	arr = (double**)malloc(sizeof(double*) * n);
 
 	for (int q = 0; q < n; q++)
 	{
-		*(arr + q) = (int*)malloc(sizeof(int) * n);
+		*(arr + q) = (double*)malloc(sizeof(double) * n);
 	}
 
 	for (int i = 0; i < n; i++)
 	{
-		fscanf(file, "%d %d %d %d %d", (*(arr+i)+0 ),(*(arr + i)+1), (*(arr + i) + 2), (*(arr + i) + 3), (*(arr + i) + 4));
+		fscanf(file, "%lf %lf %lf %lf %lf", (*(arr+i)+0 ),(*(arr + i)+1), (*(arr + i) + 2), (*(arr + i) + 3), (*(arr + i) + 4));
 	}
 
-	if (n == 5)
-	{
-		
-	}
-	else if (n == 4)
-	{
 
-	}
-	else if (n == 3)
-	{
-
-	}
-	else if (n == 2)
-	{
-
-	}
-	else if (n == 1)
-	{
-
-	}
-
-	for (int x = 0; x < n; x++)
-	{
-		for (int y = 0; y < n; y++)
-		{
-			printf("%lf ", *(*(arr + x) + y));
-		}
-		printf("\n");
-	}
-
+	printMatrix(arr, n);
 
 
 
@@ -66,7 +38,46 @@ int main() {
 	return 0;
 }
 
-//det 만들기
+
+double detA(double** A, int n) 
+{
+	if (n == 5)
+	{
+		sliceMatrix
+	}
+	else if (n == 4)
+	{
+
+	}
+	else if (n == 3)
+	{
+
+	}
+	else if (n == 2)
+	{
+		if (true)
+		{
+
+		}
+	}
+	else if (n == 1)
+	{
+		return *(*(A));
+	}
+}
+
+
+double calcluate(double** matrix, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		if (n%2 == 0)
+		{
+
+		}
+		
+	}
+}
 
 double** sliceMatrix(double** matrix, int sliceC, int sliceR, int n)
 {
@@ -95,3 +106,16 @@ double** sliceMatrix(double** matrix, int sliceC, int sliceR, int n)
 	}
 	return matrix;
 }// det을 사용하면 sliceMtrix를 여러번 아마 n-1번만큼 사용한다 그리고 sum에다가 그 계산값을 매번 더해준다
+
+
+void printMatrix(double** A, int n)
+{
+	for (int x = 0; x < n; x++)
+	{
+		for (int y = 0; y < n; y++)
+		{
+			printf("%.2lf ", *(*(arr + x) + y));
+		}
+		printf("\n");
+	}
+}
