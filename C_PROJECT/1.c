@@ -21,15 +21,12 @@ int main() {
 
 	for (int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < n; j++)
-		{
-			*(*(arr + i) + j) = fgetc(file);
-		}
+		fscanf(file, "%d %d %d %d %d", (*(arr+i)+0 ),(*(arr + i)+1), (*(arr + i) + 2), (*(arr + i) + 3), (*(arr + i) + 4));
 	}
 
 	if (n == 5)
 	{
-
+		
 	}
 	else if (n == 4)
 	{
@@ -52,7 +49,7 @@ int main() {
 	{
 		for (int y = 0; y < n; y++)
 		{
-			printf("%d ", *(*(arr + x) + y));
+			printf("%lf ", *(*(arr + x) + y));
 		}
 		printf("\n");
 	}
@@ -68,6 +65,8 @@ int main() {
 
 	return 0;
 }
+
+//det ¸¸µé±â
 
 double** sliceMatrix(double** matrix, int sliceC, int sliceR, int n)
 {
