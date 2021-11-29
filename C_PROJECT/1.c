@@ -1,5 +1,7 @@
 #include "20211555.h"
 
+**double
+
 int main() {
 
 	FILE* file = fopen("matrix.txt", "r");
