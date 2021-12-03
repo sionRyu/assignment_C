@@ -7,7 +7,7 @@ typedef struct _NODE {
 }NODE;
 
 NODE* head = NULL;
-int num;
+int num = 0;
 
 void InsertNodeAt(char c, int index);
 void DeleteNodeAt(int index);
@@ -57,18 +57,17 @@ void InsertNodeAt(char c, int index)
         if (num < index)
         {
             pNew->link = NULL;
-            prev->link->link = pNew;
+            prev->link = pNew;
         }
         else
         {
             if (index == 0)
             {
                 pNew->link = head->link;
-                pNew = head;
+                head = pNew;
             }
             else
             {
-
                 pNew->link = prev->link;
                 prev->link = pNew;
             }
@@ -162,4 +161,6 @@ void PrintList()
         printf("%c", now->data);
         now = now->link;
     }
+
+    free(head);
 }
